@@ -34,9 +34,12 @@ module Process =
             state, None
 
     let stop state (p : Process) =
-        p.EnableRaisingEvents <- false // else it will trap the exit event and restart
-        p.Kill()
-        p.Dispose()
+        try
+            p.EnableRaisingEvents <- false // else it will trap the exit event and restart
+            p.Kill()
+            p.Dispose()
+        with
+        | _ -> ()
         { state with 
             Pid = None
             Status = Stopped }
