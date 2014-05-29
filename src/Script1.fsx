@@ -9,7 +9,7 @@ let s =
     { Path = @"C:\Program Files (x86)\Microsoft F#\v4.0\Fsi.exe"
       Args = ""
       Restart = true }
-let x = spawn s 
+let x = spawn s
 x.Post Start
 x.Post Stop
 x.Post Restart

@@ -20,7 +20,7 @@ module Data =
           Args : string
           Restart : bool }
 
-    type Status = 
+    type Status =
         | Active
         | Stopped
 
